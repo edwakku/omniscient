@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:omniscient"
         mc:Ignorable="d"
-        Title="Omniscient v1.1b" MouseDown="Window_MouseDown" Height="167.334" Width="600" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="#D8151515">
-
+        Title="Omniscient v1.1b" MouseDown="Window_MouseDown" Height="120.62" Width="600" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="#D8151515">
+        
+    
+        
     <Grid>
         <Label x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Height="28" Width="580" FontFamily="Arial" FontSize="16" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0"/>
         <Button x:Name="CloseButton" Click="closeClick" Content="x" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="41" Height="20" Background="#05DDDDDD" FontFamily="Arial" BorderBrush="#FFFF8DFA" Foreground="#FFFF8DFA"/>
         <Label Content="Omniscient v1.1b" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="162" FontFamily="Arial" Margin="97,8,341,0" Foreground="#FFFF8DFA"/>
         <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="40" Height="20" Background="#05DDDDDD" FontFamily="Arial" BorderBrush="#FFFF8DFA" Foreground="#FFFF8DFA"/>
-        <Rectangle Fill="#FF252525" HorizontalAlignment="Left" Height="85" Margin="0,82,0,0" VerticalAlignment="Top" Width="600"/>
+        <Rectangle Fill="#FF252525" HorizontalAlignment="Left" Width="600" Margin="0,88,0,0" Height="33" VerticalAlignment="Top"/>
     </Grid>
 </Window>

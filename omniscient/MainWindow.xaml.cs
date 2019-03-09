@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
+
 using DiscordRPC;
 
 namespace omniscient
@@ -25,11 +27,12 @@ namespace omniscient
 
     public partial class MainWindow : Window
     {
-        private DispatcherTimer dispatcherTimer;
-        public DiscordRpcClient client;
-        private DispatcherTimer rpcupdateTimer;
-        public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon();
+        private DispatcherTimer dispatcherTimer; //title update timer
+        public DiscordRpcClient client; //discord rpc client
+        private DispatcherTimer rpcupdateTimer; //rpc set timer
+        public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon(); //Tray icon
 
+        //Initialize the discord rpc client
         void Initialize()
         {
             client = new DiscordRpcClient("551862655103664138");
@@ -40,18 +43,22 @@ namespace omniscient
         {
             var sP = new SetPresence();
             sP.Initialize();
+
             InitializeComponent();
 
+            //Window title update timer
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
             dispatcherTimer.Start();
 
+            //Rich presence set timer
             rpcupdateTimer = new DispatcherTimer();
             rpcupdateTimer.Tick += new EventHandler(rpcupdateTimer_Tick);
             rpcupdateTimer.Interval = new TimeSpan(0, 0, 2);
             rpcupdateTimer.Start();
 
+            //Double clicking the tray icon
             notIco.DoubleClick +=
             delegate (object sender, EventArgs args)
             {
@@ -62,6 +69,7 @@ namespace omniscient
 
         }
 
+        //Update Window title to Omniscient
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             if (client != null) { client.Invoke(); }
@@ -69,12 +77,14 @@ namespace omniscient
 
         }
 
+        //Sets the presence
         private void rpcupdateTimer_Tick(object sender, EventArgs e)
         {
             var sP = new SetPresence();
             sP.RPCUpdate();
         }
 
+        //Close Button
         private void closeClick(object sender, RoutedEventArgs e)
         {
             if (client != null)
@@ -85,12 +95,14 @@ namespace omniscient
             Close();
         }
 
+        //Dragging from anywhere on the window
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
 
+        //Minimize to tray (hides window and Creates Tray icon)
         public void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             notIco.Icon = Properties.Resources.omni_icon_white;
