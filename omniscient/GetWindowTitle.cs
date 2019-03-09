@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace omniscient
 {
-
+    //Truncate a string
     public static class StringExt
     {
         public static string Truncate(this string value, int maxLength)
@@ -21,6 +21,7 @@ namespace omniscient
         }
     }
 
+    //Gets the currently active Window title
     class GetWindowTitle
     {
 
@@ -44,7 +45,7 @@ namespace omniscient
             {
                 strTitle = stringBuilder.ToString();
             }
-            if (strTitle.Length >= 128)
+            if (strTitle.Length >= 128) //shortens title to 125 and adds ... to the end
             {
                 strTitle = strTitle.Truncate(125) + "...";
             }

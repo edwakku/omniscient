@@ -7,6 +7,7 @@ using DiscordRPC;
 
 namespace omniscient
 {
+    //Sets the Rich Presence
     class SetPresence
     {
         public static DiscordRpcClient client;
@@ -22,6 +23,7 @@ namespace omniscient
         public static string lit;
         string curOp = GetWindowTitle.GetCaptionOfActiveWindow();
 
+        //Updates the RPC
         public void RPCUpdate()
         {   
             //Browsers

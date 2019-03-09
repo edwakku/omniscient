@@ -110,6 +110,10 @@ namespace omniscient
             this.Hide();
             notIco.ShowBalloonTip(300, "Omniscient","Omniscient was minimized to the icon tray.",ToolTipIcon.Info);
         }
-
+        //Discord Button
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.google.com"); //Invite URL Here
+        }
     }
 }

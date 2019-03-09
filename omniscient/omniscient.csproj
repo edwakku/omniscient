@@ -163,5 +163,8 @@
   <ItemGroup>
     <None Include="Resources\omni_icon_white.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Discord-Logo-White.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
