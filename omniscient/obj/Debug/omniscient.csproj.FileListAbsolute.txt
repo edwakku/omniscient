@@ -1,0 +1,44 @@
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Omniscient.exe.config
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Omniscient.exe.manifest
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Omniscient.application
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Omniscient.exe
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Omniscient.pdb
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\DiscordRPC.dll
+E:\Projects\Omniscient\omniscient\omniscient\bin\Debug\Newtonsoft.Json.dll
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\omniscient.csprojAssemblyReference.cache
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\MainWindow.g.cs
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\App.g.cs
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient_MarkupCompile.cache
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient_MarkupCompile.lref
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\MainWindow.baml
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient.g.resources
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\omniscient.Properties.Resources.resources
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\omniscient.csproj.GenerateResource.cache
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\omniscient.csproj.CoreCompileInputs.cache
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient.exe.manifest
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient.application
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\omniscient.csproj.CopyComplete
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient.exe
+E:\Projects\Omniscient\omniscient\omniscient\obj\Debug\Omniscient.pdb
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Omniscient.exe.config
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Omniscient.exe.manifest
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Omniscient.application
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Omniscient.exe
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Omniscient.pdb
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\DiscordRPC.dll
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\omniscient.csprojAssemblyReference.cache
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\MainWindow.g.cs
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\App.g.cs
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient_MarkupCompile.cache
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient_MarkupCompile.lref
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\MainWindow.baml
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient.g.resources
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\omniscient.Properties.Resources.resources
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\omniscient.csproj.GenerateResource.cache
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\omniscient.csproj.CoreCompileInputs.cache
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient.exe.manifest
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient.application
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\omniscient.csproj.CopyComplete
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient.exe
+C:\Users\Sami Koski\Desktop\omniscient\omniscient\obj\Debug\Omniscient.pdb
