@@ -10,12 +10,13 @@
 
 
     <Grid>
-        <Label x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Height="28" Width="580" FontFamily="Arial" FontSize="16" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0"/>
+        <Label x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Height="28" Width="580" FontFamily="Arial" FontSize="16" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0"/>
         <Button x:Name="CloseButton" Click="closeClick" Content="x" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="41" Height="20" Background="{x:Null}" FontFamily="Arial" BorderBrush="#FF7289DA" Foreground="#FF7289DA"/>
         <Label Content="Omniscient 1.1" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="162" FontFamily="Arial" Margin="211,8,227,0" Foreground="#FF7289DA"/>
         <Button x:Name="MinimizeButton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="52,10,0,0" VerticalAlignment="Top" Width="40" Height="20" Background="{x:Null}" FontFamily="Arial" BorderBrush="#FF7289DA" Foreground="#FF7289DA"/>
-        <Rectangle Fill="#FF252525" HorizontalAlignment="Left" Width="600" Margin="0,88,0,0" Height="33" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FF252525" HorizontalAlignment="Left" Width="600" Margin="0,98,0,0" Height="23" VerticalAlignment="Top"/>
         <Button x:Name="DiscordBtn" Content="Join the Discord" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="97,10,0,0" Height="20" Background="{x:Null}" Foreground="#FF7289DA" BorderBrush="#FF7289DA" FontFamily="Arial" FontSize="11" Click="Button_Click"/>
+        <Label Content="bit.ly/omniscient-rpc - Created by: Sami (@morelikesame on Twitter)" HorizontalAlignment="Center" Height="23" VerticalAlignment="Top" Width="342" FontFamily="Arial" Margin="248,98,10,0" Foreground="#FF7289DA" FontSize="11"/>
 
     </Grid>
 </Window>

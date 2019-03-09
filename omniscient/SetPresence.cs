@@ -27,13 +27,18 @@ namespace omniscient
         public void RPCUpdate()
         {   
             //Browsers
-            if (curOp.Contains("Mozilla Firefox")) { det = "Surfing on the internet:"; lik = "firefox"; lit = "Omniscient 1.1b"; }
-            else if (curOp.Contains(" - Google Chrome")) { det = "Surfing on the internet:"; lik = "chrome"; lit = "Omniscient 1.1b"; }
-            else if (curOp.Contains(" - Internet Explorer")) { det = "Seriously using:"; lik = "iexplore"; lit = "Omniscient 1.1b"; }
-            else if (curOp.Contains("Microsoft Edge")) { det = "Surfing on the internet:"; lik = "edge"; lit = "Omniscient 1.1b"; }
-            else if (curOp.Contains("Discord")) { det = "Chatting on:"; lik = "discord"; lit = "Omniscient 1.1b"; }
-            //Misc.
-            else { det = "Currently in app:"; lik = "all_seeing_eye"; lit = "Omniscient 1.1b";  }
+            if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains(" - Google Chrome")) { det = "Surfing the internet:"; lik = "chrome"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains(" - Internet Explorer")) { det = "Seriously using IE in this year:"; lik = "iexplore"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("Microsoft Edge")) { det = "Surfing the internet:"; lik = "edge"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("Opera")) { det = "Surfing the web:"; lik = "opera"; lit = "Omniscient 1.1"; }
+            //Chat
+            else if (curOp.Contains("Discord")) { det = "Chatting on:"; lik = "discord"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("Skype")) { det = "It wasnt time to ditch:"; lik = "skype"; lit = "Omniscient 1.1"; }
+            //Artistic
+            else if (curOp.Contains(" - Paint")) { det = "Painting a masterpiece:"; lik = "paint"; lit = "Omniscient 1.1"; }
+            //Default
+            else { det = "Currently in app:"; lik = "all_seeing_eye"; lit = "Omniscient 1.1";  }
 
             client.SetPresence(new RichPresence()
             {
