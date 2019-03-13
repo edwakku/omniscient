@@ -14,11 +14,21 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Omniscient.exe" Value="Omniscient.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Omniscient.exe.config" Value="Omniscient.exe.config"/>
     <ROW Property="ALLUSERS" Value="1"/>
-    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCOMMENTS" Value="Omniscient RPC" ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="omni_icon.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="morelikesame"/>
+    <ROW Property="P" Value="P"/>
+    <ROW Property="Pr" Value="Pr"/>
+    <ROW Property="Pro" Value="Pro"/>
+    <ROW Property="Prod" Value="Prod"/>
+    <ROW Property="Produ" Value="Produ"/>
+    <ROW Property="Produc" Value="Produc"/>
+    <ROW Property="Product" Value="Product"/>
     <ROW Property="ProductCode" Value="1033:{AF330E0F-6856-4B71-A168-3E7FD984B9B7} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductN" Value="ProductN"/>
+    <ROW Property="ProductNa" Value="ProductNa"/>
+    <ROW Property="ProductNam" Value="ProductNam"/>
     <ROW Property="ProductName" Value="Omniscient"/>
     <ROW Property="ProductVersion" Value="1.1" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
