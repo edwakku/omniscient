@@ -5,16 +5,27 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "omniscient", "omniscient\omniscient.csproj", "{B1636075-5246-491B-A3F6-6A695AD150BF}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Installer Project", "Installer Project\Installer Project.aiproj", "{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1636075-5246-491B-A3F6-6A695AD150BF}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{B1636075-5246-491B-A3F6-6A695AD150BF}.All|Any CPU.Build.0 = Release|Any CPU
 		{B1636075-5246-491B-A3F6-6A695AD150BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B1636075-5246-491B-A3F6-6A695AD150BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1636075-5246-491B-A3F6-6A695AD150BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1636075-5246-491B-A3F6-6A695AD150BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.All|Any CPU.ActiveCfg = DefaultBuild
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.All|Any CPU.Build.0 = DefaultBuild
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.Debug|Any CPU.Build.0 = DefaultBuild
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{BF89FC9F-A39E-4E41-9C0F-BDE215322E8E}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
