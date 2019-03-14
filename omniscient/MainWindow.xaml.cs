@@ -113,7 +113,7 @@ namespace omniscient
         //Discord Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://discord.gg/jW5EQp6"); //Invite URL Here
+            System.Diagnostics.Process.Start("https://discord.gg/Er3PgfB"); //Invite URL Here
         }
     }
 }
