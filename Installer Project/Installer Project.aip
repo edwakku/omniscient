@@ -24,13 +24,13 @@
     <ROW Property="Produ" Value="Produ"/>
     <ROW Property="Produc" Value="Produc"/>
     <ROW Property="Product" Value="Product"/>
-    <ROW Property="ProductCode" Value="1033:{AF330E0F-6856-4B71-A168-3E7FD984B9B7} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{DCE17E19-0DB2-4727-8E77-78A08DE6A983} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductN" Value="ProductN"/>
     <ROW Property="ProductNa" Value="ProductNa"/>
     <ROW Property="ProductNam" Value="ProductNam"/>
     <ROW Property="ProductName" Value="Omniscient"/>
-    <ROW Property="ProductVersion" Value="1.1" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.1.2" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{B4BDD784-5C81-4A6B-A279-3D606B59C144}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

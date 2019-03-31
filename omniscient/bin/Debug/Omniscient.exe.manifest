@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Omniscient.exe" size="1249240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Omniscient.exe" size="1252824">
       <assemblyIdentity name="Omniscient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xy12XyoLPK1rdizSWWuh+qBf124zH3G3WNBtmbWNy7g=</dsig:DigestValue>
+        <dsig:DigestValue>1WMcLKBRB5nLRuiww+Nh4U+PPNrs800J3+H7KU1HIWo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

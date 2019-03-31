@@ -74,6 +74,10 @@ namespace omniscient
         {
             if (client != null) { client.Invoke(); }
             CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+            SetPresence.StatText = CustomStatusText.Text;
+            SetPresence.CustAppText = CustomAppText.Text;
+            CustomAppText.MaxLength = 128;
+            CustomStatusText.MaxLength = 128;
 
         }
 
@@ -114,6 +118,26 @@ namespace omniscient
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://discord.gg/Er3PgfB"); //Invite URL Here
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.customStatus = true;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.customStatus = false;
+        }
+
+        private void CustomAppTextCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.customApp = true;
+        }
+
+        private void CustomAppTextCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.customApp = false;
         }
     }
 }

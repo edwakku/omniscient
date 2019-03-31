@@ -18,49 +18,80 @@ namespace omniscient
             client.Initialize();
         }
 
+        public static bool customStatus;
+        public static bool customApp;
+
+        public static string StatText;
+        public static string CustAppText;
+
         public static string det;
         public static string lik;
         public static string lit;
+        public static string app;
+
         string curOp = GetWindowTitle.GetFullTitle();
 
         //Updates the RPC
         public void RPCUpdate()
         {
+            lit = "Omniscient 1.2";
             //Browsers
-            if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains(" - Google Chrome")) { det = "Surfing the internet:"; lik = "chrome"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains(" - Internet Explorer")) { det = "Getting viruses:"; lik = "iexplore"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Microsoft Edge")) { det = "Surfing the internet:"; lik = "edge"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Opera")) { det = "Surfing the web:"; lik = "opera"; lit = "Omniscient 1.1"; }
+            if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
+            else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }
+            else if (curOp.Contains("Firefox Nightly")) { det = "Surfing the internet:"; lik = "ffnightly"; }
+            else if (curOp.Contains("Google Chrome")) { det = "Surfing the internet:"; lik = "chrome"; }
+            else if (curOp.Contains("Internet Explorer")) { det = "Getting viruses:"; lik = "iexplore"; }
+            else if (curOp.Contains("Microsoft Edge")) { det = "Surfing the internet:"; lik = "edge"; }
+            else if (curOp.Contains("Opera")) { det = "Surfing the web:"; lik = "opera"; }
             //Chat
-            else if (curOp.Contains("Discord")) { det = "Chatting on:"; lik = "discord"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Skype")) { det = "It wasnt time to ditch:"; lik = "skype"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("Discord")) { det = "Chatting on:"; lik = "discord"; }
+            else if (curOp.Contains("Skype")) { det = "It wasnt time to ditch:"; lik = "skype"; }
+            else if (curOp.Contains("WhatsApp")) { det = "Chatting on:"; lik = "whatsapp"; }
+            else if (curOp.Contains("Telegram")) { det = "Chatting on:"; lik = "telegram"; }
             //Artistic
-            else if (curOp.Contains(" - Paint")) { det = "Painting a masterpiece:"; lik = "paint"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("paint.net")) { det = "Paint.neting a masterpiece:"; lik = "pdn"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Inkscape")) { det = "Making vector art:"; lik = "inkscape"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Adobe Premiere Pro")) { det = "Editing a video:"; lik = "prpro"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Adobe After Effects")) { det = "Creating Effects:"; lik = "aae"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("VEGAS Pro")) { det = "Editing a video:"; lik = "vegas"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains(" - Paint")) { det = "Painting a masterpiece:"; lik = "paint"; }
+            else if (curOp.Contains("paint.net")) { det = "Paint.neting a masterpiece:"; lik = "pdn"; }
+            else if (curOp.Contains("GIMP")) { det = "Making a masterpiece:"; lik = "gimp"; }
+            else if (curOp.Contains("Inkscape")) { det = "Making vector art:"; lik = "inkscape"; }
+            else if (curOp.Contains("Adobe Premiere Pro")) { det = "Editing a video:"; lik = "prpro"; }
+            else if (curOp.Contains("Adobe After Effects")) { det = "Creating Effects:"; lik = "aae"; }
+            else if (curOp.Contains("VEGAS Pro")) { det = "Editing a video:"; lik = "vegas"; }
+            //Gaming
+            else if (curOp.Contains("Steam")) { det = "Browsing:"; lik = "steam"; }
             //Coding
-            else if (curOp.Contains("Unity 20")) { det = "Making a game:"; lik = "unity"; lit = "Omniscient 1.1"; }
-            else if (curOp.Contains("Microsoft Visual Studio")) { det = "Coding:"; lik = "visualstudio"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("Notepad++")) { det = "Writing:"; lik = "nplusplus"; }
+            else if (curOp.Contains("Unity 20")) { det = "Making a game:"; lik = "unity"; }
+            else if (curOp.Contains("Microsoft Visual Studio")) { det = "Coding:"; lik = "visualstudio"; }
             //Media Players
-            else if (curOp.Contains("VLC")) { det = "Media playback:"; lik = "VLC"; lit = "Omniscient 1.1"; }
+            else if (curOp.Contains("VLC")) { det = "Media playback:"; lik = "VLC"; }
+            //Misc.
+            else if (curOp == "") { det = "Idle"; lik = "desk"; }
+            else if (curOp == "Program Manager") { det = "Idle"; lik = "desk"; }
+            else if (curOp == lit ) { det = "looking into the void:"; lik = "omni_12"; }
             //Default
-            else { det = "Currently in app:"; lik = "all_seeing_eye"; lit = "Omniscient 1.1";  }
+            else { det = "Currently in app:"; lik = "no_icon"; }
 
-            client.SetPresence(new RichPresence()
+            app = GetWindowTitle.GetCaptionOfActiveWindow();
+
+            if (customStatus==true)
             {
-                Details = det,
-                State = GetWindowTitle.GetCaptionOfActiveWindow(),
-                Assets = new Assets()
+                det = StatText;
+            }
+            if (customApp==true)
+            {
+                app = CustAppText;
+            }
+                client.SetPresence(new RichPresence()
                 {
-                    LargeImageKey = lik,
-                    LargeImageText = lit,
-                    SmallImageKey = "app_icon_w"
-                }
-            });
+                    Details = det,
+                    State = app,
+                    Assets = new Assets()
+                    {
+                        LargeImageKey = lik,
+                        LargeImageText = lit,
+                        SmallImageKey = "app_icon_w"
+                    }
+                });            
         }
     }
 }
