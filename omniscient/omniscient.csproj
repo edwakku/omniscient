@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>omni_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\may_omniscient.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -100,7 +100,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SetPresence.cs" />
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -165,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Discord-Logo-White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\omni_white.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\may_omniscient.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

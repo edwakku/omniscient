@@ -34,7 +34,7 @@ namespace omniscient
         //Updates the RPC
         public void RPCUpdate()
         {
-            lit = "Omniscient 1.2";
+            lit = "Omniscient 1.3";
             //Browsers
             if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
             else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }

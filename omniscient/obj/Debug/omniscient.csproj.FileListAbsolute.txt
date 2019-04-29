@@ -86,3 +86,5 @@ C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\Omniscient.applic
 C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\omniscient.csproj.CopyComplete
 C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\Omniscient.exe
 C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\Omniscient.pdb
+C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\About.g.cs
+C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Debug\About.baml

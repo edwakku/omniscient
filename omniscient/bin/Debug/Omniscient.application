@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Omniscient.exe.manifest" size="5278">
+    <dependentAssembly dependencyType="install" codebase="Omniscient.exe.manifest" size="5308">
       <assemblyIdentity name="Omniscient.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RvACgVuVlIbmpry/pX68za4mhIGsa42sX6ZX4E9VlTg=</dsig:DigestValue>
+        <dsig:DigestValue>O+WF81UJ/jOzELM9Wt/bPc51JCgWRFMNBWegwQ7F/eE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

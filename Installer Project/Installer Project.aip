@@ -15,7 +15,7 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Omniscient.exe.config" Value="Omniscient.exe.config"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="Omniscient RPC" ValueLocId="*"/>
-    <ROW Property="ARPPRODUCTICON" Value="omni_icon.exe" Type="8"/>
+    <ROW Property="ARPPRODUCTICON" Value="may_omniscient.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="morelikesame"/>
     <ROW Property="P" Value="P"/>
     <ROW Property="Pr" Value="Pr"/>
@@ -24,13 +24,13 @@
     <ROW Property="Produ" Value="Produ"/>
     <ROW Property="Produc" Value="Produc"/>
     <ROW Property="Product" Value="Product"/>
-    <ROW Property="ProductCode" Value="1033:{4177438D-12F1-415D-BF34-A569CA2244D4} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{93CA2378-401E-4C25-B815-153DA9E3CB31} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductN" Value="ProductN"/>
     <ROW Property="ProductNa" Value="ProductNa"/>
     <ROW Property="ProductNam" Value="ProductNam"/>
     <ROW Property="ProductName" Value="Omniscient"/>
-    <ROW Property="ProductVersion" Value="1.2" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.3" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{B4BDD784-5C81-4A6B-A279-3D606B59C144}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -139,7 +139,7 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="omni_icon.exe" SourcePath="E:\Projects\Omniscient\Assets\omni_icon.ico" Index="0"/>
+    <ROW Name="may_omniscient.exe" SourcePath="..\omniscient\Resources\may_omniscient.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("omni_icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/may_omniscient.ico")]
 
 
