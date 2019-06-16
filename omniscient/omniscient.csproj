@@ -103,6 +103,7 @@
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaveSettings.cs" />
     <Compile Include="SetPresence.cs" />
     <Page Include="About.xaml">
       <SubType>Designer</SubType>

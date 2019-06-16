@@ -5,22 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:omniscient"
         mc:Ignorable="d"
-        Title="Omniscient 1.3" MouseDown="Window_MouseDown" Height="127.524" Width="412.833" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+        Title="Omniscient 1.4b" MouseDown="Window_MouseDown" Height="152.524" Width="412.833" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
 
 
 
-    <Grid Height="128" VerticalAlignment="Top" HorizontalAlignment="Left" Width="413">
-        <Rectangle x:Name="TopBar" HorizontalAlignment="Left" Width="413" RadiusX="9" RadiusY="9" Height="128" VerticalAlignment="Top">
+    <Grid Height="153" VerticalAlignment="Top" HorizontalAlignment="Left" Width="413">
+        <Rectangle x:Name="TopBar" HorizontalAlignment="Left" Width="413" RadiusX="9" RadiusY="9" Height="153" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#E5220B8F"/>
-                    <GradientStop Color="#E5990789" Offset="1"/>
+                    <GradientStop Color="#E50B898F"/>
+                    <GradientStop Color="#E599075D" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="TopBar_Copy" HorizontalAlignment="Left" Width="400" Height="56" VerticalAlignment="Top" Margin="6,66,0,0" Fill="#FF0F0F0F" RadiusX="9" RadiusY="9">
+        <Rectangle x:Name="TopBar_Copy" HorizontalAlignment="Left" Width="400" Height="81" VerticalAlignment="Top" Margin="6,66,0,0" Fill="#FF151515" RadiusX="9" RadiusY="9">
+
         </Rectangle>
-        <Label x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Height="32" Width="400" FontFamily="Arial" FontSize="18" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0" TextOptions.TextHintingMode="Animated">
+        <Label HorizontalContentAlignment="Center" x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Height="32" Width="400" FontFamily="Arial" FontSize="18" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0" TextOptions.TextHintingMode="Animated">
             <Label.Effect>
                 <DropShadowEffect Opacity="0.685" ShadowDepth="1"/>
             </Label.Effect>
@@ -47,12 +48,19 @@
 
         <CheckBox x:Name="CustomTextCheck" Content="Use custom status" HorizontalAlignment="Left" Margin="30,97,0,0" VerticalAlignment="Top" Height="18" Width="141" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White"/>
         <TextBox x:Name="CustomStatusText" HorizontalAlignment="Left" Height="20" Margin="222,95,0,0" TextWrapping="Wrap" Text="&gt; custom status here &lt;" VerticalAlignment="Top" Width="158" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
-        <TextBlock x:Name="apptitle" HorizontalAlignment="Left" Height="13" Margin="328,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" Foreground="White" FontFamily="Arial" FontSize="11">
+        <TextBlock x:Name="apptitle" HorizontalAlignment="Left" Height="13" Margin="320,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Foreground="White" FontFamily="Arial" FontSize="11">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.71" ShadowDepth="0"/>
-            </TextBlock.Effect><Run Text="Omniscient 1."/><Run Text="3"/></TextBlock>
+            </TextBlock.Effect><Run Text="Omniscient 1."/><Run Text="4b"/></TextBlock>
         <TextBox x:Name="CustomAppText" HorizontalAlignment="Left" Height="20" Margin="198,72,0,0" TextWrapping="Wrap" Text="&gt; custom app name here &lt;" VerticalAlignment="Top" Width="182" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
         <CheckBox x:Name="CustomAppTextCheck" Content="Use custom app name" HorizontalAlignment="Left" Margin="30,74,0,0" VerticalAlignment="Top" Height="18" Width="163" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Checked="CustomAppTextCheck_Checked" Unchecked="CustomAppTextCheck_Unchecked" Background="White"/>
+        <TextBox x:Name="BlockedWordsTextBox" HorizontalAlignment="Left" Height="20" Margin="136,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Blocked words:" HorizontalAlignment="Left" Margin="26,116,0,0" VerticalAlignment="Top" Width="110" Height="25" FontFamily="Arial" FontSize="14" Foreground="White"/>
+        <Button x:Name="SaveBtn" 
+            Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Margin="336,120,0,0" Height="20" FontFamily="Arial" FontSize="11"
+                BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1" Click="SaveBtn_Click">
+        </Button>
+        <CheckBox x:Name="AltThemeCheck" Content="Alt icons" HorizontalAlignment="Left" Margin="140,11,0,0" VerticalAlignment="Top" Height="19" Width="76" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White" Checked="AltThemeCheck_Checked" Unchecked="AltThemeCheck_Unchecked"/>
 
 
     </Grid>

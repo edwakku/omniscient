@@ -18,8 +18,12 @@ namespace omniscient
             client.Initialize();
         }
 
+        public static bool blockedWord;
+        
         public static bool customStatus;
         public static bool customApp;
+
+        public static bool altTheme;
 
         public static string StatText;
         public static string CustAppText;
@@ -31,10 +35,11 @@ namespace omniscient
 
         string curOp = GetWindowTitle.GetFullTitle();
 
+
         //Updates the RPC
         public void RPCUpdate()
         {
-            lit = "Omniscient 1.3";
+            lit = "1.4b";
             //Browsers
             if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
             else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }
@@ -58,6 +63,7 @@ namespace omniscient
             else if (curOp.Contains("VEGAS Pro")) { det = "Editing a video:"; lik = "vegas"; }
             //Gaming
             else if (curOp.Contains("Steam")) { det = "Browsing:"; lik = "steam"; }
+            else if (curOp.Contains("Minecraft")) { det = "Playing:"; lik = "minecraft"; }
             //Coding
             else if (curOp.Contains("Notepad++")) { det = "Writing:"; lik = "nplusplus"; }
             else if (curOp.Contains("Unity 20")) { det = "Making a game:"; lik = "unity"; }
@@ -67,7 +73,7 @@ namespace omniscient
             //Misc.
             else if (curOp == "") { det = "Idle"; lik = "desk"; }
             else if (curOp == "Program Manager") { det = "Idle"; lik = "desk"; }
-            else if (curOp == lit ) { det = "looking into the void:"; lik = "omni_12"; }
+            else if (curOp == "Omniscient " + lit ) { det = "looking into the void:"; lik = "omni_12"; }
             //Default
             else { det = "Currently in app:"; lik = "no_icon"; }
 
@@ -81,14 +87,24 @@ namespace omniscient
             {
                 app = CustAppText;
             }
-                client.SetPresence(new RichPresence()
+            if (blockedWord == true)
+            {
+                det = "Incognito Mode";
+                app = "Version " + lit;
+                lik = "blocked";
+            }
+            if (altTheme == true)
+            {
+                lik = lik + "_alt";
+            }
+            client.SetPresence(new RichPresence()
                 {
                     Details = det,
                     State = app,
                     Assets = new Assets()
                     {
                         LargeImageKey = lik,
-                        LargeImageText = lit,
+                        LargeImageText = "Omniscient " + lit,
                         SmallImageKey = "app_icon_w"
                     }
                 });            

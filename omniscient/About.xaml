@@ -10,8 +10,8 @@
         <Rectangle HorizontalAlignment="Left" Height="306" RadiusY="9" RadiusX="9" VerticalAlignment="Top" Width="413">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                    <GradientStop Color="#E5220B8F"/>
-                    <GradientStop Color="#E5990789" Offset="1"/>
+                    <GradientStop Color="#E50B898F"/>
+                    <GradientStop Color="#E5990785" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -22,7 +22,7 @@
         </Button>
         <Image Height="98" VerticalAlignment="Top" Source="Resources/omni_white.ico" Margin="158,32,158,0"/>
         <Label HorizontalContentAlignment="Center" Content="Omniscient" Height="30" Margin="0,130,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
-        <Label HorizontalContentAlignment="Center" Content="v1.3 - (Pre May Update)" Height="28" Margin="0,155,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="13" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
+        <Label HorizontalContentAlignment="Center" Content="v1.4 - (Mid June Update)" Height="28" Margin="0,155,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="13" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
         <Label HorizontalContentAlignment="Center" Content="Created by: Sami (morelikesame)" Height="32" Margin="0,188,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
         <Button x:Name="DiscordBtn" Content="Discord Server" Margin="158,237,158,0" VerticalAlignment="Top" Height="20" FontFamily="Arial" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="DiscordBtn_Click">
             <Button.Effect>
