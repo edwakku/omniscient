@@ -180,5 +180,8 @@
   <ItemGroup>
     <Resource Include="Resources\may_omniscient.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mesh.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

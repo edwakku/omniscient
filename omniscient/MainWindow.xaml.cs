@@ -16,6 +16,7 @@ using System.Windows.Threading;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Diagnostics;
+using omniscient.Properties;
 
 using DiscordRPC;
 
@@ -27,41 +28,42 @@ namespace omniscient
 
     public partial class MainWindow : Window
     {
-        private DispatcherTimer dispatcherTimer; //title update timer
+        private DispatcherTimer TUChange; //title update timer
         public DiscordRpcClient client; //discord rpc client
-        private DispatcherTimer rpcupdateTimer; //rpc set timer
-        public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon(); //Tray icon
-        private About abt = null;
-        public static string BlockList;
+        public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon(); //tray icon
+        private About abt = null; //about window
+        public static string BlockList; //list of blocked words
+        private string appID = "551862655103664138"; //discord app id
 
         //Initialize the discord rpc client
         void Initialize()
         {
-            client = new DiscordRpcClient("551862655103664138");
+            client = new DiscordRpcClient(appID);
             client.Initialize();
         }
 
         public MainWindow()
         {
             var sP = new SetPresence();
+            //Initializes the rich presence.
             sP.Initialize();
 
             InitializeComponent();
-
+            
+            //Loads saved stuff
             SaveSettings.FileLoader();
+
+            SetPresence.altTheme = Settings.Default.OldIcons;
+            SetPresence.incognitoMode = Settings.Default.Incognito;
+
+            //Sets loaded list.
             BlockedWordsTextBox.Text = SaveSettings.LoadedList;
 
-            //Window title update timer
-            dispatcherTimer = new DispatcherTimer();
-            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 2);
-            dispatcherTimer.Start();
-
-            //Rich presence set timer
-            rpcupdateTimer = new DispatcherTimer();
-            rpcupdateTimer.Tick += new EventHandler(rpcupdateTimer_Tick);
-            rpcupdateTimer.Interval = new TimeSpan(0, 0, 2);
-            rpcupdateTimer.Start();
+            //Title update check timer.
+            TUChange = new DispatcherTimer();
+            TUChange.Tick += new EventHandler(TUChange_Tick);
+            TUChange.Interval = new TimeSpan(0, 0, 2);
+            TUChange.Start();
 
             //Double clicking the tray icon
             notIco.DoubleClick +=
@@ -71,18 +73,6 @@ namespace omniscient
                 this.WindowState = WindowState.Normal;
                 notIco.Visible = false;
             };
-
-        }
-
-        //Update Window title to Omniscient
-        private void dispatcherTimer_Tick(object sender, EventArgs e)
-        {
-            if (client != null) { client.Invoke(); }
-            CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
-            SetPresence.StatText = CustomStatusText.Text;
-            SetPresence.CustAppText = CustomAppText.Text;
-            CustomAppText.MaxLength = 128;
-            CustomStatusText.MaxLength = 128;
 
         }
 
@@ -111,16 +101,65 @@ namespace omniscient
             }
         }
 
-        //Sets the presence
-        private void rpcupdateTimer_Tick(object sender, EventArgs e)
+        private string oldTitle = string.Empty;
+
+        //Updates the presence when it detects a title change.
+
+        private void UpdatePresence()
         {
-            BlockedWordCheck();
-            var sP = new SetPresence();
-            sP.RPCUpdate();
+            string newTitle = GetWindowTitle.GetFullTitle();
+
+            if (oldTitle != newTitle)
+            {
+                if (client != null) { client.Invoke(); }
+
+                CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+
+                SetPresence.StatText = CustomStatusText.Text;
+                SetPresence.CustAppText = CustomAppText.Text;
+
+                CustomAppText.MaxLength = 128;
+                CustomStatusText.MaxLength = 128;
+
+                oldTitle = newTitle;
+
+                BlockedWordCheck();
+                var sP = new SetPresence();
+                sP.RPCUpdate();
+            }
+        }
+
+        private void ForceUpdatePresence()
+        {
+                if (client != null) { client.Invoke(); }
+
+                CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+
+                SetPresence.StatText = CustomStatusText.Text;
+                SetPresence.CustAppText = CustomAppText.Text;
+
+
+                CustomAppText.MaxLength = 128;
+                CustomStatusText.MaxLength = 128;
+
+                BlockedWordCheck();
+                var sP = new SetPresence();
+                sP.RPCUpdate();
+        }
+
+        //Update Window title to Omniscient
+        private void TUChange_Tick(object sender, EventArgs e)
+        {
+            UpdatePresence();
+
+            SetPresence.altTheme = Settings.Default.OldIcons;
+            SetPresence.incognitoMode = Settings.Default.Incognito;
+
+            Settings.Default.Save();
         }
 
         //Close Button
-        private void closeClick(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)
         {
             if (client != null)
             {
@@ -155,7 +194,7 @@ namespace omniscient
                 abt.Show();
             }
         }
-
+        //When the about window is closed, sets the window null.
         public void AboutClosed(object sender, System.EventArgs e)
         {
             abt = null;
@@ -163,37 +202,56 @@ namespace omniscient
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            SetPresence.customStatus = true;
+            SetPresence.customStatus = true; //Sets the custom status option true.
+            ForceUpdatePresence();
         }
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            SetPresence.customStatus = false;
+            SetPresence.customStatus = false; //Sets the custom status option false.
+            ForceUpdatePresence();
         }
 
         private void CustomAppTextCheck_Checked(object sender, RoutedEventArgs e)
         {
-            SetPresence.customApp = true;
+            SetPresence.customApp = true; //Sets the custom app option true.
+            ForceUpdatePresence();
         }
 
         private void CustomAppTextCheck_Unchecked(object sender, RoutedEventArgs e)
         {
-            SetPresence.customApp = false;
+            SetPresence.customApp = false; //Sets the custom app option false.
+            ForceUpdatePresence();
         }
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
             SaveSettings.FileSaver();
+            ForceUpdatePresence();
         }
 
         private void AltThemeCheck_Checked(object sender, RoutedEventArgs e)
         {
-            SetPresence.altTheme = true;
+            SetPresence.altTheme = false; //Turns the alternative icon theme on.
+            ForceUpdatePresence();
         }
 
         private void AltThemeCheck_Unchecked(object sender, RoutedEventArgs e)
         {
-            SetPresence.altTheme = false;
+            SetPresence.altTheme = true; //Turns the alternative icon theme off.
+            ForceUpdatePresence();
+        }
+
+        private void IncognitoCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.incognitoMode = true; //Turns incognito on.
+            ForceUpdatePresence();
+        }
+
+        private void IncognitoCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+           SetPresence.incognitoMode = false; //Turns incognito off.
+           ForceUpdatePresence();
         }
     }
 }

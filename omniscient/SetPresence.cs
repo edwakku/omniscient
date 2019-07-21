@@ -19,11 +19,12 @@ namespace omniscient
         }
 
         public static bool blockedWord;
-        
+        public static bool incognitoMode;
+
         public static bool customStatus;
         public static bool customApp;
 
-        public static bool altTheme;
+        public static bool altTheme = true;
 
         public static string StatText;
         public static string CustAppText;
@@ -39,7 +40,7 @@ namespace omniscient
         //Updates the RPC
         public void RPCUpdate()
         {
-            lit = "1.4b";
+            lit = "1.4 b2";
             //Browsers
             if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
             else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }
@@ -93,10 +94,17 @@ namespace omniscient
                 app = "Version " + lit;
                 lik = "blocked";
             }
+            if (incognitoMode == true)
+            {
+                det = "Incognito Mode";
+                app = "Version " + lit;
+                lik = "blocked";
+            }
             if (altTheme == true)
             {
                 lik = lik + "_alt";
             }
+
             client.SetPresence(new RichPresence()
                 {
                     Details = det,

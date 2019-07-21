@@ -26,7 +26,7 @@ namespace omniscient
         }
 
         //Closes the about window
-        private void closeClick(object sender, RoutedEventArgs e)
+        private void CloseClick(object sender, RoutedEventArgs e)
         {
             Close();
         }

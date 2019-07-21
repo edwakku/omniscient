@@ -14,8 +14,9 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Omniscient.exe" Value="Omniscient.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Omniscient.exe.config" Value="Omniscient.exe.config"/>
     <ROW Property="ALLUSERS" Value="1"/>
-    <ROW Property="ARPCOMMENTS" Value="Omniscient RPC" ValueLocId="*"/>
+    <ROW Property="ARPCOMMENTS" Value="Omniscient Rich Presence" ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="may_omniscient.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="morelikesame.github.io"/>
     <ROW Property="Manufacturer" Value="morelikesame"/>
     <ROW Property="P" Value="P"/>
     <ROW Property="Pr" Value="Pr"/>

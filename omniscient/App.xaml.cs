@@ -19,9 +19,8 @@ namespace omniscient
         protected override void OnStartup(StartupEventArgs e)
         {
             const string appName = "Omniscient";
-            bool createdNew;
 
-            _mutex = new Mutex(true, appName, out createdNew);
+            _mutex = new Mutex(true, appName, out bool createdNew);
 
             if (!createdNew)
             {
