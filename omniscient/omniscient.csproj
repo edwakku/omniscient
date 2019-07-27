@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\may_omniscient.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\omniscient_app_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -182,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\mesh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\omniscient_app_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

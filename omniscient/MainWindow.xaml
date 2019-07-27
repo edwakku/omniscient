@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:omniscient"
         mc:Ignorable="d"
-        Title="Omniscient 1.4 b2" MouseDown="Window_MouseDown" Height="173.857" Width="412.833" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+        Title="Omniscient 1.4" MouseDown="Window_MouseDown" Height="232" Width="412.833" Foreground="White" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner" Visibility="Visible" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
 
 
 
-    <Grid Height="173" VerticalAlignment="Top" HorizontalAlignment="Left" Width="413" Margin="0,0,0,-20">
-        <Rectangle x:Name="TopBar" HorizontalAlignment="Left" Width="413" RadiusX="9" RadiusY="9" Opacity="0.9" Height="173" VerticalAlignment="Top">
+    <Grid HorizontalAlignment="Left" Width="413" Height="232" VerticalAlignment="Top">
+        <Rectangle x:Name="TopBar" HorizontalAlignment="Left" Width="413" RadiusX="9" RadiusY="9" Opacity="0.9" Height="232" VerticalAlignment="Top">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF608ED1"/>
@@ -18,57 +18,77 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="TopBar_Copy" HorizontalAlignment="Left" Width="407" Height="104" VerticalAlignment="Top" Margin="3,66,0,0" Fill="#FF151515" RadiusX="9" RadiusY="9">
+        <Rectangle x:Name="TopBar_Incog" HorizontalAlignment="Left" Width="413" RadiusX="9" RadiusY="9" Opacity="0.9" Height="232" VerticalAlignment="Top" Visibility="Hidden">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF131113"/>
+                    <GradientStop Color="#FF302830" Offset="0.735"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle x:Name="ControlBox" HorizontalAlignment="Left" Width="407" Height="161" VerticalAlignment="Top" Margin="3,68,0,0" Fill="#FF151515" RadiusX="9" RadiusY="9">
 
         </Rectangle>
-        <Label HorizontalContentAlignment="Center" x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="6,34,0,0" VerticalAlignment="Top" Height="32" Width="400" FontFamily="Arial" FontSize="18" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0" TextOptions.TextHintingMode="Animated">
+        <Label HorizontalContentAlignment="Center" x:Name="CurrentlyOpen" Content="&gt; Current Window Title &lt;" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Height="32" Width="413" FontFamily="Arial" FontSize="18" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0" TextOptions.TextHintingMode="Animated">
             <Label.Effect>
                 <DropShadowEffect Opacity="0.685" ShadowDepth="1"/>
             </Label.Effect>
         </Label>
 
-        <Button Style="{DynamicResource RoundCorner}" x:Name="CloseButton" Click="CloseClick" Content="x" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="23" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Margin="3,3,0,0">
+
+        <Button Style="{DynamicResource RoundCorner}" x:Name="MinimizeButton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="35,3,0,0" VerticalAlignment="Top" Width="48" Height="23" FontFamily="Arial" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.3" ShadowDepth="1"/>
             </Button.Effect>
         </Button>
 
-        <Button Style="{DynamicResource RoundCorner}" x:Name="MinimizeButton" Click="MinimizeButton_Click" Content="-" HorizontalAlignment="Left" Margin="51,3,0,0" VerticalAlignment="Top" Width="48" Height="23" FontFamily="Arial" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B">
-            <Button.Effect>
-                <DropShadowEffect Opacity="0.3" ShadowDepth="1"/>
-            </Button.Effect>
+        <Button Style="{DynamicResource RoundCorner}" x:Name="CloseButton" Click="CloseClick" Content="x" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Height="23" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Margin="3,3,0,0">
+
         </Button>
+
 
         <Button Style="{DynamicResource RoundCorner}" x:Name="InfoBtn" 
-                Content="?" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="99,3,0,0" Height="23" FontFamily="Arial" FontSize="11" Click="Button_Click" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1">
+                Content="?" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="85,3,0,0" Height="23" FontFamily="Arial" FontSize="11" Click="Button_Click" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.3" ShadowDepth="1"/>
             </Button.Effect>
         </Button>
 
-        <CheckBox x:Name="CustomTextCheck" Content="Use custom status" HorizontalAlignment="Left" Margin="11,99,0,0" VerticalAlignment="Top" Height="18" Width="156" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White"/>
-        <TextBox x:Name="CustomStatusText" HorizontalAlignment="Left" Height="20" Margin="202,97,0,0" TextWrapping="Wrap" Text="&gt; custom status here &lt;" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
-        <TextBlock x:Name="apptitle" HorizontalAlignment="Left" Height="13" Margin="330,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76" Foreground="White" FontFamily="Arial" FontSize="11">
+        <CheckBox x:Name="CustomTextCheck" Content="Use custom status" HorizontalAlignment="Left" Margin="11,100,0,0" VerticalAlignment="Top" Height="18" Width="156" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White"/>
+        <TextBox x:Name="CustomStatusText" HorizontalAlignment="Left" Height="20" Margin="181,98,0,0" TextWrapping="Wrap" Text="&gt; custom status here &lt;" VerticalAlignment="Top" Width="221" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
+        <TextBlock x:Name="apptitle" TextAlignment="Right" HorizontalAlignment="Left" Height="13" Margin="138,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Foreground="White" FontFamily="Arial" FontSize="11">
             <TextBlock.Effect>
                 <DropShadowEffect Opacity="0.71" ShadowDepth="0"/>
             </TextBlock.Effect><Run Text="Omniscient 1.4"/></TextBlock>
-        <TextBox x:Name="CustomAppText" HorizontalAlignment="Left" Height="20" Margin="202,73,0,0" TextWrapping="Wrap" Text="&gt; custom app name here &lt;" VerticalAlignment="Top" Width="200" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
-        <CheckBox x:Name="CustomAppTextCheck" Content="Use custom app name" HorizontalAlignment="Left" Margin="11,75,0,0" VerticalAlignment="Top" Height="18" Width="180" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Checked="CustomAppTextCheck_Checked" Unchecked="CustomAppTextCheck_Unchecked" Background="White"/>
-        <TextBox x:Name="BlockedWordsTextBox" HorizontalAlignment="Left" Height="20" Margin="117,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14" RenderTransformOrigin="0.5,0.5"/>
-        <Label Content="Blocked words" HorizontalAlignment="Left" Margin="7,140,0,0" VerticalAlignment="Top" Width="105" Height="26" FontFamily="Arial" FontSize="14" Foreground="White"/>
+        <TextBox x:Name="CustomAppText" HorizontalAlignment="Left" Height="20" Margin="181,74,0,0" TextWrapping="Wrap" Text="&gt; custom app name here &lt;" VerticalAlignment="Top" Width="221" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14"/>
+        <CheckBox x:Name="CustomAppTextCheck" Content="Use custom app name" HorizontalAlignment="Left" Margin="11,76,0,0" VerticalAlignment="Top" Height="18" Width="165" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Checked="CustomAppTextCheck_Checked" Unchecked="CustomAppTextCheck_Unchecked" Background="White"/>
+        <TextBox x:Name="BlockedWordsTextBox" HorizontalAlignment="Left" Height="20" Margin="112,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" Foreground="White" Background="#FF1B1B1B" BorderBrush="#FF1B1B1B" FontFamily="Arial" Cursor="" CaretBrush="White" FontSize="14" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="bl_label" Content="Blocked words" HorizontalAlignment="Left" Margin="7,172,0,0" VerticalAlignment="Top" Width="105" Height="26" FontFamily="Arial" FontSize="14" Foreground="White"/>
         <Button x:Name="SaveBtn" 
-            Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="41" Margin="361,144,0,0" Height="20" FontFamily="Arial" FontSize="11"
+            Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="362,201,0,0" Height="20" FontFamily="Arial" FontSize="11"
                 BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1" Click="SaveBtn_Click">
         </Button>
-        <CheckBox x:Name="AltThemeCheck" Content="Old icons" HorizontalAlignment="Left" Margin="141,122,0,0" VerticalAlignment="Top" Height="19" Width="81" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White" Checked="AltThemeCheck_Checked" Unchecked="AltThemeCheck_Unchecked">
+        <CheckBox x:Name="IncognitoCheck" Content="Incognito Mode" HorizontalAlignment="Left" Margin="11,124,0,0" VerticalAlignment="Top" Height="18" Width="119" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White" Checked="IncognitoCheck_Checked" Unchecked="IncognitoCheck_Unchecked">
             <CheckBox.Effect>
                 <DropShadowEffect Opacity="0.7" ShadowDepth="0"/>
             </CheckBox.Effect>
         </CheckBox>
-        <CheckBox x:Name="IncognitoCheck" Content="Incognito Mode" HorizontalAlignment="Left" Margin="11,122,0,0" VerticalAlignment="Top" Height="19" Width="119" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White" Checked="IncognitoCheck_Checked" Unchecked="IncognitoCheck_Unchecked">
+        <Button x:Name="RoS_btn" 
+            Content="Run on Startup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="82" Margin="206,124,0,0" Height="20" FontFamily="Arial" FontSize="11"
+            BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1" Click="RoS_btn_Click" />
+        <Button x:Name="RemoveKey" 
+            Content="Don't run on startup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="293,124,0,0" Height="20" FontFamily="Arial" FontSize="11"
+            BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" BorderThickness="0,1,1,1" Click="RemoveKey_Click"  />
+        <CheckBox x:Name="Theme_Check" Content="Old icons" HorizontalAlignment="Left" Margin="11,148,0,0" VerticalAlignment="Top" Height="18" Width="81" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" FontSize="14" Background="White" Checked="Theme_Check_Checked" Unchecked="Theme_Check_Unchecked" >
             <CheckBox.Effect>
                 <DropShadowEffect Opacity="0.7" ShadowDepth="0"/>
             </CheckBox.Effect>
         </CheckBox>
+        <CheckBox x:Name="Blocklist_Check" Content="Hide blocked words" HorizontalAlignment="Left" Margin="11,203,0,0" VerticalAlignment="Top" Height="16" Width="146" Foreground="White" BorderBrush="#FF1B1B1B" FontFamily="Arial" TextOptions.TextHintingMode="Fixed" Background="White" FontSize="14" Unchecked="Blocklist_Check_Unchecked" Checked="Blocklist_Check_Checked">
+            <CheckBox.Effect>
+                <DropShadowEffect Opacity="0.7" ShadowDepth="0"/>
+            </CheckBox.Effect>
+        </CheckBox>
+
     </Grid>
 </Window>

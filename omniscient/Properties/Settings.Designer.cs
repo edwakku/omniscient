@@ -26,18 +26,6 @@ namespace omniscient.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool Incognito {
-            get {
-                return ((bool)(this["Incognito"]));
-            }
-            set {
-                this["Incognito"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool OldIcons {
             get {
                 return ((bool)(this["OldIcons"]));
@@ -56,42 +44,6 @@ namespace omniscient.Properties {
             }
             set {
                 this["HideBlockList"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool OldIconsChecked {
-            get {
-                return ((bool)(this["OldIconsChecked"]));
-            }
-            set {
-                this["OldIconsChecked"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool IncognitoChecked {
-            get {
-                return ((bool)(this["IncognitoChecked"]));
-            }
-            set {
-                this["IncognitoChecked"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool HideBlockListCheck {
-            get {
-                return ((bool)(this["HideBlockListCheck"]));
-            }
-            set {
-                this["HideBlockListCheck"] = value;
             }
         }
     }

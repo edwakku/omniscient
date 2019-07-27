@@ -19,6 +19,7 @@ using System.Diagnostics;
 using omniscient.Properties;
 
 using DiscordRPC;
+using Microsoft.Win32;
 
 namespace omniscient
 {
@@ -34,6 +35,7 @@ namespace omniscient
         private About abt = null; //about window
         public static string BlockList; //list of blocked words
         private string appID = "551862655103664138"; //discord app id
+        private bool bl_hidden;
 
         //Initialize the discord rpc client
         void Initialize()
@@ -52,9 +54,7 @@ namespace omniscient
             
             //Loads saved stuff
             SaveSettings.FileLoader();
-
-            SetPresence.altTheme = Settings.Default.OldIcons;
-            SetPresence.incognitoMode = Settings.Default.Incognito;
+            TickBoxLoader();
 
             //Sets loaded list.
             BlockedWordsTextBox.Text = SaveSettings.LoadedList;
@@ -62,7 +62,7 @@ namespace omniscient
             //Title update check timer.
             TUChange = new DispatcherTimer();
             TUChange.Tick += new EventHandler(TUChange_Tick);
-            TUChange.Interval = new TimeSpan(0, 0, 2);
+            TUChange.Interval = new TimeSpan(0, 0, 1);
             TUChange.Start();
 
             //Double clicking the tray icon
@@ -113,6 +113,8 @@ namespace omniscient
             {
                 if (client != null) { client.Invoke(); }
 
+                //TickBoxSaver();
+
                 CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
 
                 SetPresence.StatText = CustomStatusText.Text;
@@ -133,11 +135,12 @@ namespace omniscient
         {
                 if (client != null) { client.Invoke(); }
 
-                CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+                //TickBoxSaver();
 
+                CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+                
                 SetPresence.StatText = CustomStatusText.Text;
                 SetPresence.CustAppText = CustomAppText.Text;
-
 
                 CustomAppText.MaxLength = 128;
                 CustomStatusText.MaxLength = 128;
@@ -151,11 +154,22 @@ namespace omniscient
         private void TUChange_Tick(object sender, EventArgs e)
         {
             UpdatePresence();
+        }
 
-            SetPresence.altTheme = Settings.Default.OldIcons;
-            SetPresence.incognitoMode = Settings.Default.Incognito;
+        private void TickBoxSaver()
+        {
+            Settings.Default.OldIcons = SetPresence.altTheme;
+            Settings.Default.HideBlockList = bl_hidden;
 
             Settings.Default.Save();
+        }
+
+        private void TickBoxLoader()
+        {
+            SetPresence.altTheme = Settings.Default.OldIcons;
+            Theme_Check.IsChecked = Settings.Default.OldIcons;
+            bl_hidden = Settings.Default.HideBlockList;
+            Blocklist_Check.IsChecked = Settings.Default.HideBlockList;
         }
 
         //Close Button
@@ -226,32 +240,68 @@ namespace omniscient
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            SaveSettings.FileSaver();
-            ForceUpdatePresence();
-        }
-
-        private void AltThemeCheck_Checked(object sender, RoutedEventArgs e)
-        {
-            SetPresence.altTheme = false; //Turns the alternative icon theme on.
-            ForceUpdatePresence();
-        }
-
-        private void AltThemeCheck_Unchecked(object sender, RoutedEventArgs e)
-        {
-            SetPresence.altTheme = true; //Turns the alternative icon theme off.
-            ForceUpdatePresence();
+            SaveSettings.QuickAndDirtyFix();
+            TickBoxSaver();
         }
 
         private void IncognitoCheck_Checked(object sender, RoutedEventArgs e)
         {
+            apptitle.Text = "Omniscient 1.4 (Incognito Mode)";
+            TopBar_Incog.Visibility = Visibility.Visible;
             SetPresence.incognitoMode = true; //Turns incognito on.
             ForceUpdatePresence();
         }
 
         private void IncognitoCheck_Unchecked(object sender, RoutedEventArgs e)
         {
+           apptitle.Text = "Omniscient 1.4";
+           TopBar_Incog.Visibility = Visibility.Hidden;
            SetPresence.incognitoMode = false; //Turns incognito off.
            ForceUpdatePresence();
+        }
+
+        private void RoS_btn_Click(object sender, RoutedEventArgs e)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                key.SetValue("Omniscient", "\"" + System.Windows.Forms.Application.ExecutablePath + "\"");
+            }
+            System.Windows.MessageBox.Show("Omniscient will now run on start up. (Only on this user account)", "Omniscient Registery System: Version 1.4");
+        }
+
+        private void RemoveKey_Click(object sender, RoutedEventArgs e)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            {
+                key.DeleteValue("Omniscient", false);
+            }
+            System.Windows.MessageBox.Show("Omniscient will not run on start up.", "Omniscient Registery System: Version 1.4");
+        }
+
+        private void Theme_Check_Checked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.altTheme = true; //Turns the alternative icon theme off.
+            ForceUpdatePresence();
+        }
+
+        private void Theme_Check_Unchecked(object sender, RoutedEventArgs e)
+        {
+            SetPresence.altTheme = false; //Turns the alternative icon theme on.
+            ForceUpdatePresence();
+        }
+
+        private void Blocklist_Check_Unchecked(object sender, RoutedEventArgs e)
+        {
+            bl_hidden = false;
+            BlockedWordsTextBox.Visibility = Visibility.Visible;
+            bl_label.Visibility = Visibility.Visible;
+        }
+
+        private void Blocklist_Check_Checked(object sender, RoutedEventArgs e)
+        {
+            bl_hidden = true;
+            BlockedWordsTextBox.Visibility = Visibility.Hidden;
+            bl_label.Visibility = Visibility.Hidden;
         }
     }
 }

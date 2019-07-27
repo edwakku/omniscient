@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="Omniscient.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="Resources\may_omniscient.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="Resources\omniscient_app_icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Omniscient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -67,33 +67,33 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Omniscient.exe" size="2692568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Omniscient.exe" size="3023320">
       <assemblyIdentity name="Omniscient" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ALmEQrNupZiZV8hoqgE19vn4PWwaF19fTFvlZZwLzN4=</dsig:DigestValue>
+        <dsig:DigestValue>k/7yG+soxj/sbEiJfwD5RFhZ9xR7Y3i3Pmt+H37KVRs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Omniscient.exe.config" size="1568">
+  <file name="Omniscient.exe.config" size="1054">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xdSUyxhKAQXhIz3A3c8KdwB4l/03SEyqYVZeqXValUs=</dsig:DigestValue>
+      <dsig:DigestValue>rq7uTVZVd6+cOCUB2SizMJlGNKKVlSu75q81fUCREzA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\may_omniscient.ico" size="311961">
+  <file name="Resources\omniscient_app_icon.ico" size="320364">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>w0Cs4EEb7ybnKzseHHnxoVV0Wy0/PqxEGSgCsYM9fUM=</dsig:DigestValue>
+      <dsig:DigestValue>XhDV2Xhxm8B7l8o85q18/TReoMH3hXYVnkQvfNwUuMQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

@@ -24,12 +24,12 @@ namespace omniscient
                 MessageBox.Show("Folder Created. (Documents/Omniscient)", "Omniscient Save System: Version 1.4");
                 //Create the block list file.
                 File.WriteAllText(blpath, MainWindow.BlockList);
-                MessageBox.Show("Blocked Words list succesfully saved.", "Omniscient Save System: Version 1.4");
+                MessageBox.Show("Blocked words list successfully saved.", "Omniscient Save System: Version 1.4");
             }
             else {
                 //If directory exists just create file.
                 File.WriteAllText(blpath, MainWindow.BlockList);
-                MessageBox.Show("Blocked Words list succesfully saved.", "Omniscient Save System: Version 1.4");
+                MessageBox.Show("Blocked words list & settings successfully saved.", "Omniscient Save System: Version 1.4");
             }
         }
 
@@ -44,5 +44,12 @@ namespace omniscient
             }
 
         }
+
+        public static void QuickAndDirtyFix() // FIX SAVING IF EVER WORKING ON THIS AGAIN!!!
+        {
+            FileSaver();
+            FileSaver();
+        }
+
     }
 }

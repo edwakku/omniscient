@@ -7,19 +7,19 @@
         mc:Ignorable="d"
         Title="About" Height="305.575" Width="412.833" Background="Transparent" AllowsTransparency="True" WindowStyle="None" MouseDown="Window_MouseDown" Foreground="White" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="306" RadiusY="9" RadiusX="9" VerticalAlignment="Top" Width="413" Fill="#E5111111"/>
+        <Rectangle HorizontalAlignment="Left" Height="306" RadiusY="9" RadiusX="9" VerticalAlignment="Top" Width="413" Fill="#F9232323"/>
         <Button Style="{DynamicResource RoundCorner}" x:Name="CloseButton" Click="CloseClick" Content="x" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Width="40" Height="23" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B">
         </Button>
-        <Image Height="98" VerticalAlignment="Top" Source="Resources/omni_white.ico" Margin="158,32,158,0"/>
+        <Image Height="98" VerticalAlignment="Top" Source="Resources/omniscient_app_icon.ico" Margin="158,32,158,0"/>
         <Label HorizontalContentAlignment="Center" Content="Omniscient" Height="30" Margin="0,130,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="20" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
         <Label HorizontalContentAlignment="Center" Content="v1.4 - (Summer 2019 Update)" Height="28" Margin="0,155,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="13" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
         <Label HorizontalContentAlignment="Center" Content="Created by: Sami (morelikesame)" Height="32" Margin="0,188,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="15" ScrollViewer.VerticalScrollBarVisibility="Disabled" Foreground="White"/>
-        <Button Style="{DynamicResource RoundCorner}" x:Name="DiscordBtn" Content="Discord Server" Margin="158,234,155,0" VerticalAlignment="Top" Height="25" FontFamily="Arial" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="DiscordBtn_Click">
+        <Button Style="{DynamicResource RoundCorner}" x:Name="DiscordBtn" Content="Discord Server" Margin="158,234,155,0" VerticalAlignment="Top" Height="25" FontFamily="Arial" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="DiscordBtn_Click" FontSize="10">
         </Button>
-        <Button Style="{DynamicResource RoundCorner}" x:Name="TwitterBtn" Content="Twitter" HorizontalAlignment="Left" Margin="94,234,0,0" VerticalAlignment="Top" Width="64" Height="25" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="TwitterBtn_Click">
+        <Button Style="{DynamicResource RoundCorner}" x:Name="TwitterBtn" Content="Twitter" HorizontalAlignment="Left" Margin="94,234,0,0" VerticalAlignment="Top" Width="64" Height="25" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="TwitterBtn_Click" FontSize="10">
         </Button>
-        <Button Style="{DynamicResource RoundCorner}" x:Name="YouTubeBtn" Content="YouTube" HorizontalAlignment="Left" Margin="258,234,0,0" VerticalAlignment="Top" Width="64" Height="25" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="YouTubeBtn_Click">
+        <Button Style="{DynamicResource RoundCorner}" x:Name="YouTubeBtn" Content="YouTube" HorizontalAlignment="Left" Margin="258,234,0,0" VerticalAlignment="Top" Width="64" Height="25" FontFamily="Arial" RenderTransformOrigin="0.425,0.575" BorderBrush="#FF1B1B1B" Foreground="White" Background="#FF1B1B1B" Click="YouTubeBtn_Click" FontSize="10">
         </Button>
-        <Button Style="{DynamicResource RoundCorner}" x:Name="WWWbtn" Content="morelikesame.github.io" Margin="94,264,91,0" VerticalAlignment="Top" Height="25" FontFamily="Arial" RenderTransformOrigin="0.5,0.5" BorderBrush="#001B1B1B" Foreground="White" Background="#00000000" Click="WWWbtn_Click" TextOptions.TextHintingMode="Fixed"/>
+        <Button Style="{DynamicResource RoundCorner}" x:Name="WWWbtn" Content="morelikesame.github.io" Margin="94,264,91,0" VerticalAlignment="Top" Height="25" FontFamily="Arial" RenderTransformOrigin="0.5,0.5" BorderBrush="#001B1B1B" Foreground="White" Background="#00000000" Click="WWWbtn_Click" TextOptions.TextHintingMode="Fixed" FontSize="10"/>
     </Grid>
 </Window>

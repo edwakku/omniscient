@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/mesh.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/omniscient_app_icon.ico")]
 
 

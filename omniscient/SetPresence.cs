@@ -24,7 +24,7 @@ namespace omniscient
         public static bool customStatus;
         public static bool customApp;
 
-        public static bool altTheme = true;
+        public static bool altTheme;
 
         public static string StatText;
         public static string CustAppText;
@@ -36,11 +36,10 @@ namespace omniscient
 
         string curOp = GetWindowTitle.GetFullTitle();
 
-
         //Updates the RPC
         public void RPCUpdate()
         {
-            lit = "1.4 b2";
+            lit = "1.4";
             //Browsers
             if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
             else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }
@@ -100,11 +99,11 @@ namespace omniscient
                 app = "Version " + lit;
                 lik = "blocked";
             }
-            if (altTheme == true)
+            if (altTheme != true)
             {
                 lik = lik + "_alt";
             }
-
+            
             client.SetPresence(new RichPresence()
                 {
                     Details = det,
