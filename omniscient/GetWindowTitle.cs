@@ -34,6 +34,9 @@ namespace omniscient
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         static extern int GetWindowTextLength(IntPtr hWnd);
 
+        [DllImport("user32.dll")]
+        public static extern IntPtr GetWindowThreadProcessId(IntPtr hWnd, out uint ProcessId);
+
         public static string GetCaptionOfActiveWindow()
         {
             var strTitle = string.Empty;
@@ -66,10 +69,13 @@ namespace omniscient
             return strTitle;
 
         }
-
-
-
-
-
+        public static string GetActiveProcessFileName()
+        {
+            IntPtr hwnd = GetForegroundWindow();
+            uint pid;
+            GetWindowThreadProcessId(hwnd, out pid);
+            Process p = Process.GetProcessById((int)pid);
+            return p.ProcessName.ToString();
+            }
     }
 }

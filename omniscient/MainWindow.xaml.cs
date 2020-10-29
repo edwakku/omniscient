@@ -33,7 +33,6 @@ namespace omniscient
         private DispatcherTimer TUChange; //title update timer
         public DiscordRpcClient client; //discord rpc client
         public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon(); //tray icon
-        private About abt = null; //about window
         public static string BlockList; //list of blocked words
         private string appID = "551862655103664138"; //discord app id
         private bool bl_hidden;
@@ -118,6 +117,7 @@ namespace omniscient
                 //TickBoxSaver();
 
                 CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+                CurrentProcessOpen.Content = GetWindowTitle.GetActiveProcessFileName();
 
                 SetPresence.StatText = CustomStatusText.Text;
                 SetPresence.CustAppText = CustomAppText.Text;
@@ -213,19 +213,8 @@ namespace omniscient
         //Info Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (abt == null)
-            {
-                abt = new About();
-                abt.Closed += AboutClosed;
-                abt.Show();
-            }
-        }
-        //When the about window is closed, sets the window null.
-        public void AboutClosed(object sender, System.EventArgs e)
-        {
-            abt = null;
-        }
 
+        }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             SetPresence.customStatus = true; //Sets the custom status option true.

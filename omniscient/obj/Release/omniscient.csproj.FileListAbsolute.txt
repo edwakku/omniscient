@@ -26,13 +26,10 @@ C:\Users\Sami\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.pdb
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.exe
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.pdb
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\omniscient.csprojAssemblyReference.cache
-C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\About.g.cs
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\MainWindow.g.cs
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\App.g.cs
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient_MarkupCompile.cache
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient_MarkupCompile.lref
-C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\App.baml
-C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\About.baml
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\MainWindow.baml
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.g.resources
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\omniscient.Properties.Resources.resources
