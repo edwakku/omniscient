@@ -58,7 +58,12 @@
 			</CheckBox.Effect>
 		</CheckBox>
 		<Label HorizontalContentAlignment="Left" x:Name="CurrentProcessOpen" Content="Current Application Name" HorizontalAlignment="Left" Margin="10,79,0,0" VerticalAlignment="Top" Height="27" Width="547" FontFamily="Rubik" FontSize="16" Background="#00000000" Foreground="White" RenderTransformOrigin="0,0" TextOptions.TextHintingMode="Animated"/>
-		<Label x:Name="VersionLabel" Content="Omniscient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="463" Height="30" FontFamily="Rubik" FontSize="16" Foreground="White" Margin="10,0,0,0"/>
+		<Label x:Name="VersionLabel" Content="Omniscient" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Height="30" FontFamily="Rubik" FontSize="16" Foreground="White" Margin="375,0,0,0"/>
+		<Grid HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="22" Margin="5,4,0,0">
+			<Grid.Background>
+				<ImageBrush ImageSource="Resources/omni_white.ico"/>
+			</Grid.Background>
+		</Grid>
 
 	</Grid>
 </Window>
