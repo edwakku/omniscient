@@ -213,7 +213,18 @@ namespace omniscient
         //Info Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (AboutGrid.Visibility == Visibility.Hidden)
+            {
+                AboutGrid.Visibility = Visibility.Visible;
+            }
+        }
+        //Close Info Window
+        private void CloseAbout_Click(object sender, RoutedEventArgs e)
+        {
+            if (AboutGrid.Visibility == Visibility.Visible)
+            {
+                AboutGrid.Visibility = Visibility.Hidden;
+            }
         }
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {

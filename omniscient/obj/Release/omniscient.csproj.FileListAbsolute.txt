@@ -45,3 +45,5 @@ C:\Users\S\Documents\GitHub\omniscient\omniscient\bin\Release\Newtonsoft.Json.dl
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.exe.manifest
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient.application
 C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\omniscient.csproj.CopyComplete
+C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\Omniscient_Content.g.cs
+C:\Users\S\Documents\GitHub\omniscient\omniscient\obj\Release\App.baml
