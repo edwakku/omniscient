@@ -25,8 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>8CC4921364C689FD8B773481F72B7ADC2258BE7F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>34BB3FEA5C25E38230C03CCF6E4C8F8990837D43</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>omniscient_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>omniscient_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -63,7 +63,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\omniscient_app_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\omninewico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -100,15 +100,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="About.xaml.cs">
-      <DependentUpon>About.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SaveSettings.cs" />
     <Compile Include="SetPresence.cs" />
-    <Page Include="About.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,6 +134,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="omniscient_1_TemporaryKey.pfx" />
     <None Include="omniscient_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -185,6 +179,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\omniscient_app_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="omni_logo.svg" />
+    <Resource Include="Resources\omninewico.ico" />
+    <Resource Include="Resources\OmniNewIcon.png" />
+    <Resource Include="Resources\FONTS\Rubik-Regular.ttf" />
+    <Resource Include="Resources\FONTS\Rubik-Medium.ttf" />
+    <Resource Include="Resources\FONTS\Rubik-SemiBold.ttf" />
+    <Resource Include="Resources\FONTS\Rubik-Bold.ttf" />
+    <Resource Include="Resources\FONTS\segmdl2.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

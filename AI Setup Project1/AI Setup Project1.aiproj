@@ -2,23 +2,23 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">All</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>bf89fc9f-a39e-4e41-9c0f-bde215322e8e</ProjectGuid>
+    <ProjectGuid>a55c4935-1e46-4edc-b766-6e4373ada1e9</ProjectGuid>
     <OutputType>msi</OutputType>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Installer Project.aip</StartupFile>
+    <StartupFile>AI Setup Project1.aip</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <IsWindowsApplication>True</IsWindowsApplication>
-    <AssemblyName>Installer Project</AssemblyName>
-    <Name>Installer Project</Name>
-    <RootNamespace>Installer Project</RootNamespace>
+    <AssemblyName>AI Setup Project1</AssemblyName>
+    <Name>AI Setup Project1</Name>
+    <RootNamespace>AI Setup Project1</RootNamespace>
     <LoadFromTemplate>
     </LoadFromTemplate>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
   <ItemGroup>
-    <Compile Include="Installer Project.aip">
+    <Compile Include="AI Setup Project1.aip">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

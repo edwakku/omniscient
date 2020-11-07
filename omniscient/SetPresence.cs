@@ -34,51 +34,62 @@ namespace omniscient
         public static string lit;
         public static string app;
 
-        string curOp = GetWindowTitle.GetFullTitle();
+        string curOp = GetWindowTitle.GetActiveProcessFileName();
+        string curTit = GetWindowTitle.GetFullTitle();
 
         //Updates the RPC
         public void RPCUpdate()
         {
-            lit = "1.4";
+            lit = "1.5";
             //Browsers
-            if (curOp.Contains("Mozilla Firefox")) { det = "Surfing the internet:"; lik = "firefox"; }
-            else if (curOp.Contains("Firefox Developer Edition")) { det = "Surfing the internet:"; lik = "ffdev"; }
-            else if (curOp.Contains("Firefox Nightly")) { det = "Surfing the internet:"; lik = "ffnightly"; }
-            else if (curOp.Contains("Google Chrome")) { det = "Surfing the internet:"; lik = "chrome"; }
-            else if (curOp.Contains("Internet Explorer")) { det = "Getting viruses:"; lik = "iexplore"; }
-            else if (curOp.Contains("Microsoft Edge")) { det = "Surfing the internet:"; lik = "edge"; }
-            else if (curOp.Contains("Opera")) { det = "Surfing the web:"; lik = "opera"; }
+            if (curOp.Contains("firefox")) { det = "Firefox"; lik = "firefox"; }
+            else if (curOp.Contains("chrome")) { det = "Chrome"; lik = "chrome"; }
+            else if (curOp.Contains("brave")) { det = "Brave"; lik = "brave"; }
+            else if (curOp.Contains("iexplore")) { det = "Internet Explorer"; lik = "iexplore"; }
+            else if (curOp.Contains("msedge")) { det = "Microsoft Edge"; lik = "edge"; }
+            else if (curOp.Contains("opera")) { det = "Opera"; lik = "opera"; }
             //Chat
-            else if (curOp.Contains("Discord")) { det = "Chatting on:"; lik = "discord"; }
-            else if (curOp.Contains("Skype")) { det = "It wasnt time to ditch:"; lik = "skype"; }
-            else if (curOp.Contains("WhatsApp")) { det = "Chatting on:"; lik = "whatsapp"; }
-            else if (curOp.Contains("Telegram")) { det = "Chatting on:"; lik = "telegram"; }
+            else if (curOp.Contains("Discord")) { det = "Discord"; lik = "discord"; }
+            else if (curOp.Contains("WhatsApp")) { det = "WhatsApp"; lik = "whatsapp"; }
+            else if (curOp.Contains("Telegram")) { det = "Telegram"; lik = "telegram"; }
+            else if (curOp.Contains("Zoom")) { det = "Zoom"; lik = "zoom"; }
+            else if (curOp.Contains("Teams")) { det = "Microsoft Teams"; lik = "msteams"; }
             //Artistic
-            else if (curOp.Contains(" - Paint")) { det = "Painting a masterpiece:"; lik = "paint"; }
-            else if (curOp.Contains("paint.net")) { det = "Paint.neting a masterpiece:"; lik = "pdn"; }
-            else if (curOp.Contains("GIMP")) { det = "Making a masterpiece:"; lik = "gimp"; }
-            else if (curOp.Contains("Inkscape")) { det = "Making vector art:"; lik = "inkscape"; }
-            else if (curOp.Contains("Adobe Premiere Pro")) { det = "Editing a video:"; lik = "prpro"; }
-            else if (curOp.Contains("Adobe After Effects")) { det = "Creating Effects:"; lik = "aae"; }
-            else if (curOp.Contains("VEGAS Pro")) { det = "Editing a video:"; lik = "vegas"; }
+            else if (curOp.Contains("mspaint")) { det = "Microsoft Paint"; lik = "paint"; }
+            else if (curOp.Contains("PaintDotNet")) { det = "paint.net"; lik = "pdn"; }
+            else if (curOp.Contains("gimp")) { det = "GIMP"; lik = "gimp"; }
+            else if (curOp.Contains("inkscape")) { det = "Inkscape"; lik = "inkscape"; }
+            else if (curOp.Contains("Adobe Premiere Pro")) { det = "Adobe Premiere Pro"; lik = "prpro"; }
+            else if (curOp.Contains("AfterFX")) { det = "Adobe After Effects"; lik = "aae"; }
+            else if (curOp.Contains("VideoEditor") || curTit.Contains("VSDC")) { det = "VSDC Video Editor"; lik = "vsdc"; }
+            else if (curOp.Contains("Photoshop")) { det = "Adobe Photoshop"; lik = "aps"; }
+            else if (curTit.Contains("VEGAS Pro")) { det = "Vegas Pro"; lik = "vegas"; }
             //Gaming
-            else if (curOp.Contains("Steam")) { det = "Browsing:"; lik = "steam"; }
-            else if (curOp.Contains("Minecraft")) { det = "Playing:"; lik = "minecraft"; }
+            else if (curOp.Contains("steam")) { det = "Steam"; lik = "steam"; }
+            else if (curOp.Contains("Minecraft") || curTit.Contains("Minecraft")) { det = "Playing:"; lik = "minecraft"; }
             //Coding
-            else if (curOp.Contains("Notepad++")) { det = "Writing:"; lik = "nplusplus"; }
-            else if (curOp.Contains("Unity 20")) { det = "Making a game:"; lik = "unity"; }
-            else if (curOp.Contains("Microsoft Visual Studio")) { det = "Coding:"; lik = "visualstudio"; }
+            else if (curOp.Contains("notepad++")) { det = "Notepad++"; lik = "nplusplus"; }
+            else if (curOp.Contains("Unity") || curOp.Contains("Unity Hub")) { det = "Unity"; lik = "unity"; }
+            else if (curOp.Contains("devenv")) { det = "Microsoft Visual Studio"; lik = "visualstudio"; }
+            else if (curOp.Contains("Code") && curTit.Contains("Visual Studio Code")) { det = "Visual Studio Code"; lik = "vscode"; }
             //Media Players
-            else if (curOp.Contains("VLC")) { det = "Media playback:"; lik = "VLC"; }
+            else if (curOp.Contains("vlc")) { det = "VLC Media Player"; lik = "vlc"; }
+            else if (curOp.Contains("mpc-hc64")) { det = "Media Player Classic"; lik = "mpc"; }
+            else if (curOp.Contains("AIMP")) { det = "AIMP"; lik = "AIMP"; }
             //Misc.
             else if (curOp == "") { det = "Idle"; lik = "desk"; }
-            else if (curOp == "Program Manager") { det = "Idle"; lik = "desk"; }
-            else if (curOp == "Omniscient " + lit ) { det = "looking into the void:"; lik = "omni_12"; }
+            else if (curOp == "explorer" || curOp == "ShellExperienceHost" || curOp == "SearchApp") { det = "Explorer"; lik = "explorer"; }
+            else if (curTit == "Calculator" && curOp == "ApplicationFrameHost") { det = "Calculator"; lik = "calc"; }
+            else if (curTit == "Groove Music" && curOp == "ApplicationFrameHost") { det = "Grooving to some music:"; lik = "groove"; }
+            else if (curOp == "Omniscient") { det = "looking into the void:"; lik = "omni_icon"; }
             //Default
             else { det = "Currently in app:"; lik = "no_icon"; }
 
             app = GetWindowTitle.GetCaptionOfActiveWindow();
-
+            if (det == app)
+            {
+                app = "";
+            }
             if (customStatus==true)
             {
                 det = StatText;
@@ -89,17 +100,17 @@ namespace omniscient
             }
             if (blockedWord == true)
             {
-                det = "Incognito Mode";
-                app = "Version " + lit;
+                det = "Incognito";
+                app = "";
                 lik = "blocked";
             }
             if (incognitoMode == true)
             {
-                det = "Incognito Mode";
-                app = "Version " + lit;
+                det = "Incognito";
+                app = "";
                 lik = "blocked";
             }
-            if (altTheme != true)
+            if (altTheme == true)
             {
                 lik = lik + "_alt";
             }

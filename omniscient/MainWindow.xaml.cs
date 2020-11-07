@@ -20,6 +20,7 @@ using omniscient.Properties;
 
 using DiscordRPC;
 using Microsoft.Win32;
+using System.Security.Policy;
 
 namespace omniscient
 {
@@ -32,10 +33,10 @@ namespace omniscient
         private DispatcherTimer TUChange; //title update timer
         public DiscordRpcClient client; //discord rpc client
         public static System.Windows.Forms.NotifyIcon notIco = new System.Windows.Forms.NotifyIcon(); //tray icon
-        private About abt = null; //about window
         public static string BlockList; //list of blocked words
         private string appID = "551862655103664138"; //discord app id
         private bool bl_hidden;
+        public bool bootsAtStartup;
 
         //Initialize the discord rpc client
         void Initialize()
@@ -116,6 +117,7 @@ namespace omniscient
                 //TickBoxSaver();
 
                 CurrentlyOpen.Content = GetWindowTitle.GetCaptionOfActiveWindow();
+                CurrentProcessOpen.Content = GetWindowTitle.GetActiveProcessFileName();
 
                 SetPresence.StatText = CustomStatusText.Text;
                 SetPresence.CustAppText = CustomAppText.Text;
@@ -160,6 +162,7 @@ namespace omniscient
         {
             Settings.Default.OldIcons = SetPresence.altTheme;
             Settings.Default.HideBlockList = bl_hidden;
+            Settings.Default.bootsAtStartup = bootsAtStartup;
 
             Settings.Default.Save();
         }
@@ -169,12 +172,21 @@ namespace omniscient
             SetPresence.altTheme = Settings.Default.OldIcons;
             Theme_Check.IsChecked = Settings.Default.OldIcons;
             bl_hidden = Settings.Default.HideBlockList;
+            bootsAtStartup = Settings.Default.bootsAtStartup;
+            if (bootsAtStartup == true)
+            {
+                RoS_btn.Content = "Don't run at startup";
+            } else
+            {
+                RoS_btn.Content = "Run at startup";
+            }
             Blocklist_Check.IsChecked = Settings.Default.HideBlockList;
         }
 
         //Close Button
         private void CloseClick(object sender, RoutedEventArgs e)
         {
+            TickBoxSaver();
             if (client != null)
             {
                 client.Dispose();
@@ -201,19 +213,19 @@ namespace omniscient
         //Info Button
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (abt == null)
+            if (AboutGrid.Visibility == Visibility.Hidden)
             {
-                abt = new About();
-                abt.Closed += AboutClosed;
-                abt.Show();
+                AboutGrid.Visibility = Visibility.Visible;
             }
         }
-        //When the about window is closed, sets the window null.
-        public void AboutClosed(object sender, System.EventArgs e)
+        //Close Info Window
+        private void CloseAbout_Click(object sender, RoutedEventArgs e)
         {
-            abt = null;
+            if (AboutGrid.Visibility == Visibility.Visible)
+            {
+                AboutGrid.Visibility = Visibility.Hidden;
+            }
         }
-
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             SetPresence.customStatus = true; //Sets the custom status option true.
@@ -246,7 +258,6 @@ namespace omniscient
 
         private void IncognitoCheck_Checked(object sender, RoutedEventArgs e)
         {
-            apptitle.Text = "Omniscient 1.4 (Incognito Mode)";
             TopBar_Incog.Visibility = Visibility.Visible;
             SetPresence.incognitoMode = true; //Turns incognito on.
             ForceUpdatePresence();
@@ -254,7 +265,6 @@ namespace omniscient
 
         private void IncognitoCheck_Unchecked(object sender, RoutedEventArgs e)
         {
-           apptitle.Text = "Omniscient 1.4";
            TopBar_Incog.Visibility = Visibility.Hidden;
            SetPresence.incognitoMode = false; //Turns incognito off.
            ForceUpdatePresence();
@@ -262,20 +272,27 @@ namespace omniscient
 
         private void RoS_btn_Click(object sender, RoutedEventArgs e)
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+            if (bootsAtStartup == false)
             {
-                key.SetValue("Omniscient", "\"" + System.Windows.Forms.Application.ExecutablePath + "\"");
-            }
-            System.Windows.MessageBox.Show("Omniscient will now run on start up. (Only on this user account)", "Omniscient Registery System: Version 1.4");
-        }
-
-        private void RemoveKey_Click(object sender, RoutedEventArgs e)
-        {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                {
+                    key.SetValue("Omniscient", "\"" + System.Windows.Forms.Application.ExecutablePath + "\"");
+                }
+                System.Windows.MessageBox.Show("Omniscient will now run on start up. (Only on this user account)", "Omniscient Registery System");
+                RoS_btn.Content = "Don't run at startup";
+                bootsAtStartup = true;
+            } 
+            else if (bootsAtStartup == true)
             {
-                key.DeleteValue("Omniscient", false);
+                using (RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true))
+                {
+                    key.DeleteValue("Omniscient", false);
+                }
+                System.Windows.MessageBox.Show("Omniscient will not run on start up.", "Omniscient Registery System");
+                RoS_btn.Content = "Run at startup";
+                bootsAtStartup = false;
             }
-            System.Windows.MessageBox.Show("Omniscient will not run on start up.", "Omniscient Registery System: Version 1.4");
+            TickBoxSaver();
         }
 
         private void Theme_Check_Checked(object sender, RoutedEventArgs e)
