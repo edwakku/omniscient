@@ -1,5 +1,5 @@
-# This project is abandoned, the app can still be downloaded from here but I wont guarantee it will work.
-Anyone is free to fork it, if there is any reason to do so.
+# This project is abandoned
+The app can still be downloaded from here but I wont guarantee it will work.
 
 # Omniscient
 A simple program for Windows that shows your currently active window as a rich presence status on Discord.
